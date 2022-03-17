@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
-import Balence from './components/Balance';
+import Balance from './components/Balance';
 import AddTransaction from './components/AddTransaction';
 import IncomeList from './components/IncomeList';
 import ExpenseList from './components/ExpenseList';
@@ -12,11 +12,17 @@ const App = () => {
         <GlobalContextProvider>
             <div className="container">
                 <div className="app-wrapper">
-                    <Header />
-                    <Balence />
-                    <AddTransaction />
-                    <IncomeList />
-                    <ExpenseList />
+                    <div className="left-wrapper">
+                        <Header />
+                        <Balance />
+                    </div>
+                    <div className="right-wrapper">
+                        <AddTransaction />
+                        <div className="transactions-wrapper">
+                            <IncomeList />
+                            <ExpenseList />
+                        </div>
+                    </div>
                 </div>
             </div>
         </GlobalContextProvider>
